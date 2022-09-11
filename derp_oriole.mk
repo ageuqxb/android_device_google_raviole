@@ -19,6 +19,10 @@ $(call inherit-product, device/google/raviole/aosp_oriole.mk)
 $(call inherit-product-if-exists, vendor/google/pixelparts/pixelparts.mk)
 $(call inherit-product-if-exists, vendor/google/pixelparts/powershare/device.mk)
 
+# Extra packages
+PRODUCT_PACKAGES += \
+    vendor.lineage.powershare@1.0-service.gs101
+    
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := derp_oriole
 PRODUCT_MODEL := Pixel 6
