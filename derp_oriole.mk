@@ -5,8 +5,7 @@ TARGET_BOOT_ANIMATION := 1080
 
 # Inherit some common derp stuff.
 $(call inherit-product, vendor/derp/config/common.mk)
-$(call inherit-product, vendor/derp/config/gsm.mk)
-$(call inherit-product, vendor/vendor/derp/config/common_ful_phonr.mk)
+$(call inherit-product, vendor/derp/config/common_full_phone.mk)
 
 EXTRA_UDFPS_ANIMATIONS := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
