@@ -6,6 +6,7 @@ TARGET_BOOT_ANIMATION := 1080
 # Inherit some common derp stuff.
 $(call inherit-product, vendor/derp/config/common.mk)
 $(call inherit-product, vendor/derp/config/common_full_phone.mk)
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/derp/config/device_framework_matrix.xml
 
 EXTRA_UDFPS_ANIMATIONS := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
@@ -19,10 +20,11 @@ $(call inherit-product, device/google/raviole/aosp_oriole.mk)
 $(call inherit-product-if-exists, vendor/google/pixelparts/pixelparts.mk)
 $(call inherit-product-if-exists, vendor/google/pixelparts/powershare/device.mk)
 
-# Extra packages
+		# PowerShare
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare@1.0-service.gs101
-    
+include hardware/google/pixel/powershare/device.mk
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := derp_oriole
 PRODUCT_MODEL := Pixel 6
